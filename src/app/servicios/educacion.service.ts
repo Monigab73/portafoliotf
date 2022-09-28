@@ -11,7 +11,7 @@ const httpOptions={
   providedIn: 'root'
 })
 export class EducacionService {
-  private url: string = "http://localhost:8080/";
+  private url: string = "https://warm-dawn-74315.herokuapp.com/ deployed to Heroku";
 
   constructor(private httpClient: HttpClient) { }
 
