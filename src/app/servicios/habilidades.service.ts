@@ -12,7 +12,7 @@ const httpOptions =
 })
 
 export class HabilidadesService {
-  private url: string = "https://warm-dawn-74315.herokuapp.com/";
+  private url: string = "https://git.heroku.com/warm-dawn-74315.git";
   constructor(private httpClient: HttpClient) { }
     obtenerHabilidades(): Observable<Habilidades[]> {
     return this.httpClient.get<Habilidades[]>(this.url + 'habilidades/lista', httpOptions);

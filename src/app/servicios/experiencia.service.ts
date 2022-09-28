@@ -11,7 +11,7 @@ const httpOptions =
   providedIn: 'root'
 })
 export class ExperienciaService {
-   private url: string = "https://warm-dawn-74315.herokuapp.com/";
+   private url: string = "https://git.heroku.com/warm-dawn-74315.git";
    constructor(private httpClient: HttpClient) {} 
       obtenerExperiencia(): Observable<Experiencia[]> {
       return this.httpClient.get<Experiencia[]>(this.url + 'experiencia/lista', httpOptions);
