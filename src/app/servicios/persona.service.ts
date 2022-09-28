@@ -11,7 +11,7 @@ const httpOptions =
   providedIn: 'root'
 })
 export class PersonaService {
-  private url: string = "https://warm-dawn-74315.herokuapp.com/ deployed to Heroku";
+  private url: string = "https://warm-dawn-74315.herokuapp.com/";
   constructor(private httpClient: HttpClient) { }
 
     obtenerPersona(): Observable<Persona[]> {
