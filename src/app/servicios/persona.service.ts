@@ -11,7 +11,7 @@ const httpOptions =
   providedIn: 'root'
 })
 export class PersonaService {
-  private url: string = "https://git.heroku.com/warm-dawn-74315.git";
+  private url: string = "https://warm-dawn-74315.herokuapp.com/";
   constructor(private httpClient: HttpClient) { }
 
     obtenerPersona(): Observable<Persona[]> {
