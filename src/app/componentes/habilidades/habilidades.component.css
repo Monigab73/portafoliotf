@@ -1,0 +1,45 @@
+.tarjeta-habilidades {
+    border: 2px solid hsl(227, 100%, 50%);
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.info-habilidades {
+    flex-grow: 1;
+    color: hsla(240, 95%, 48%, 0.91);
+}
+
+li {
+    list-style: none;
+}
+
+.tarjeta-titulo {
+    color: hsl(240, 95%, 48%, 0.91);
+    padding-left: 15px;
+}
+
+.btn-mas {
+    margin: 10px 15px;
+}
+
+.btn-mas i {
+    font-size: 15px;
+}
+
+.btn {
+    margin: 10px 9px;
+}
+
+.imagen-habilidades {
+    margin-right: 15px;
+    width: 100px;
+}
+
+.habilidades {
+    display: flex;
+    padding: 0.2cm;
+}
+
+.edicion-habilidades {
+    padding-right: 15px;
+}

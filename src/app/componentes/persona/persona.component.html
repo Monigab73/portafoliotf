@@ -1,0 +1,104 @@
+<div class="tarjeta-persona">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPersona">
+        <i class="bi bi-plus-circle"></i>
+    </button>
+    <div class="persona" *ngFor="let persona of listaPersona">
+        <div class="imagen-persona">
+            <img [src]="persona.imagen" alt="persona.imagen" width="90" height="120">
+        </div>
+        <div class="info-persona">
+            <h4>{{persona.nombreYapellido}}</h4>
+            <h5>{{persona.titulo}}.</h5>
+            <h6>{{persona.ubicacion}}</h6>
+            <h6>{{persona.acercaDeMi}}</h6>
+        </div>
+        <div class="edicion-persona">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#actualizarPersona">
+            <i class="bi bi-pencil-square"></i>
+            </button>
+            <button type="button" class="btn btn-primary" (click)="eliminarPersona(persona.id)"><i class="bi bi-trash"></i></button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalPersona" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Persona</h5>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formPer" (ngSubmit)="nuevaPersona()">
+                    <div class="form-group">
+                        <input type="hidden" name="id" formControlName="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen">Imagen</label>
+                        <input type="text" class="form-control" formControlName="imagen" name="imagen">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreYapellido">Nombre y Apellido</label>
+                        <input type="text" class="form-control" formControlName="nombreYapellido" name="nombreYapellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Título</label>
+                        <input type="text" class="form-control" formControlName="titulo" name="titulo">
+                    </div>
+                    <div class="form-group">
+                        <label for="ubicacion">Ubicación</label>
+                        <input type="text" class="form-control" formControlName="ubicacion" name="ubicacion">
+                    </div>
+                    <div class="form-group">
+                        <label for="acercaDeMi">Acerca De Mí.</label>
+                        <input type="text" class="form-control" formControlName="acercaDeMi" name="acercaDeMi">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actualizarPersona" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar Persona</h5>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formActualizarPersona" (ngSubmit)="actualizarPersona()">
+                    <div class="form-group">
+                        <input type="hidden" name="actualizarPersona" formControlName="actualizarPersona">
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen">Imagen</label>
+                        <input type="text" class="form-control" formControlName="imagen" name="imagen">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreYapellido">Nombre y Apellido</label>
+                        <input type="text" class="form-control" formControlName="nombreYapellido" name="nombreYapellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Título</label>
+                        <input type="text" class="form-control" formControlName="titulo" name="titulo">
+                    </div>
+                    <div class="form-group">
+                        <label for="ubicacion">Ubicación</label>
+                        <input type="text" class="form-control" formControlName="ubicacion" name="ubicacion">
+                    </div>
+                    <div class="form-group">
+                        <label for="acercaDeMi">Acerca De Mí.</label>
+                        <input type="text" class="form-control" formControlName="acercaDeMi" name="acercaDeMi">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

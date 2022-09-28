@@ -1,0 +1,45 @@
+.tarjeta-proyectos {
+    border: 2px solid hsla(227, 100%, 50%, 0.829);
+    border-radius: 25px;
+    margin: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+.tarjeta-titulo {
+    padding-left: 15px;
+    color: hsl(240, 95%, 48%, 0.91);
+}
+
+.btn-mas {
+    margin: 10px 15px;
+}
+
+.btn {
+    margin: 10px 9px;
+}
+
+.btn-mas i {
+    font-size: 15px;
+}
+
+.proyectos {
+    display: flex;
+    padding: 0.2cm;
+}
+
+.imagen-proyectos img {
+    margin-right: 15px;
+    width: 150px;
+}
+
+.info-proyectos {
+    flex-grow: 1;
+    color: hsla(240, 95%, 48%, 0.91);
+}
+
+.edicion-proyetos {
+    padding-right: 15px;
+}

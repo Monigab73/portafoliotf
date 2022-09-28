@@ -1,0 +1,47 @@
+.tarjeta-persona {
+    border: 2px solid hsl(227, 100%, 50%);
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.info-persona {
+    flex-grow: 1;
+    color: hsla(240, 95%, 48%, 0.91);
+}
+
+.tarjeta-titulo {
+    color: hsl(227, 100%, 50%, 0.829);
+    padding-left: 15px;
+}
+
+.btn-mas {
+    margin: 10px 15px;
+}
+
+.btn {
+    margin: 10px 9px;
+}
+
+.btn-mas i {
+    font-size: 15px;
+}
+
+.persona {
+    display: flex;
+    padding: 0.2cm;
+}
+
+.imagen-persona img {
+    margin-right: 15px;
+    width: 90px;
+}
+
+.edicion-persona {
+    padding-right: 10px;
+}
+
+.tarjeta-persona {
+    flex-grow: 1;
+    color: hsla(240, 95%, 48%, 0.91);
+    margin: 20px;
+}

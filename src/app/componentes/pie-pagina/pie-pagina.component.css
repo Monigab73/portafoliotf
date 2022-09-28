@@ -1,0 +1,11 @@
+.text-center {
+    font-style: italic;
+    color: hsl(240, 95%, 48%, 0.91);
+    justify-content: center;
+}
+
+.card {
+    border: 2px solid hsl(227, 100%, 50%);
+    border-radius: 25px;
+    margin: 20px;
+}

@@ -1,0 +1,90 @@
+<div class="tarjeta-habilidades">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalhabilidades">
+        <i class="bi bi-plus-circle"></i>
+    </button>
+    <h4 class="tarjeta-titulo">Habilidades:</h4>
+    <div class="habilidades" *ngFor="let habilidades of listaHabilidades">
+        <div class="imagen-habilidades">
+            <img [src]="habilidades.imagen" alt="habilidades.imagen" width="100" height="50">
+        </div>
+        <div class="info-habilidades">
+            <h4>{{habilidades.habilidades}}</h4>
+            <h5>{{habilidades.porcentajeHabilidades}}</h5>
+            <div class="progress">
+                <div class="progress-bar-striped bg-info" role="progressbar" [style.width.%]="habilidades.porcentajeHabilidades"></div>
+            </div>
+        </div>
+        <div class="edicion-habilidades">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#actualizarHabilidades">
+            <i class="bi bi-pencil-square"></i>
+            </button>
+            <button type="button" class="btn btn-primary" (click)="eliminarHabilidades(habilidades.id)"><i class="bi bi-trash"></i></button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalhabilidades" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Habilidades</h5>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formHab" (ngSubmit)="nuevaHabilidades()">
+                    <div class="form-group">
+                        <input type="hidden" name="id" formControlName="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="habilidades">Habilidades:</label>
+                        <input type="text" class="form-control" formControlName="habilidades" name="habilidades">
+                    </div>
+                    <div class="form-group">
+                        <label for="porcentajeHabilidades">Porcentaje Habilidades:</label>
+                        <input class="form-control" formControlName="porcentajeHabilidades" name="porcentajeHabilidades">
+                    </div>
+                    <div class="form-group">
+                        <label for="habilidadesImagen">Imagen</label>
+                        <input type="text" class="form-control" formControlName="imagen" name="imagen">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actualizarHabilidades" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar Habilidades</h5>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formActualizarHabilidades" (ngSubmit)="actualizarHabilidades()">
+                    <div class="form-group">
+                        <input type="hidden" name="actualizarHabilidades" formControlName="actualizarHabilidades">
+                    </div>
+                    <div class="form-group">
+                        <label for="habilidades">Habilidades:</label>
+                        <input type="text" class="form-control" formControlName="habilidades" name="habilidades">
+                    </div>
+                    <div class="form-group">
+                        <label for="porcentajeHabilidades">Porcentaje Habilidades:</label>
+                        <input class="form-control" formControlName="porcentajeHabilidades" name="porcentajeHabilidades">
+                    </div>
+                    <div class="form-group">
+                        <label for="habilidadesImagen">Imagen</label>
+                        <input type="text" class="form-control" formControlName="imagen" name="imagen">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="tarjeta-proyectos">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalproyectos">
+        <i class="bi bi-plus-circle"></i>
+    </button>
+    <h4 class="tarjeta-titulo">Proyectos:</h4>
+    <div class="proyectos" *ngFor="let proyecto of listaProyectos">
+        <div class="imagen-proyectos">
+            <img [src]="proyecto.imagen" alt="proyecto.imagen" width="150" height="100">
+        </div>
+        <div class="info-proyectos">
+            <h4>{{proyecto.nombre}}</h4>
+            <h5>{{proyecto.urlRepositorio}}</h5>
+            <h6>{{proyecto.descripcion}}</h6>
+            <p><time>{{proyecto.fechaRealizacion}}</time> - <time>{{proyecto.fechaFinalizacion}}</time></p>
+        </div>
+        <div class="edicion-proyectos">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#actualizarProyectos">
+            <i class="bi bi-pencil-square"></i>
+            </button>
+            <button type="button" class="btn btn-primary" (click)="eliminarProyectos(proyecto.id)">
+            <i class="bi bi-trash"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalproyectos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar proyectos</h5>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formProyectos" (ngSubmit)="nuevoProyecto()">
+                    <div class="form-group">
+                        <input type="hidden" name="id" formControlName="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <input type="text" class="form-control" formControlName="descripcion" name="descripcion">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaRealizacion">Fecha Realización</label>
+                        <input type="text" class="form-control" formControlName="fechaRealizacion" name="fechaRealizacion">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" formControlName="nombre" name="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="urlRepositorio">Url Repositorio</label>
+                        <input type="text" class="form-control" formControlName="urlRepositorio" name="urlRepositorio">
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen">Imagen</label>
+                        <input type="text" class="form-control" formControlName="imagen" name="imagen">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaFinalizacion">Fecha Finalización</label>
+                        <input type="text" class="form-control" formControlName="fechaFinalizacion" name="fechaFinalizacion">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actualizarProyectos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar Proyectos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formActualizarProyectos" (ngSubmit)="actualizarProyectos()">
+                    <div class="form-group">
+                        <input type="hidden" name="actualizarProyectos" formControlName="actualizarProyectos">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <input type="text" class="form-control" formControlName="descripcion" name="descripcion">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaRealizacion">Fecha Realización</label>
+                        <input type="text" class="form-control" formControlName="fechaRealizacion" name="fechaRealizacion">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" formControlName="nombre" name="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="urlRepositorio">Url Repositorio</label>
+                        <input type="text" class="form-control" formControlName="urlRepositorio" name="urlRepositorio">
+                    </div>
+                    <div class=" form-group ">
+                        <label for="imagen">Imagen</label>
+                        <input type="text " class="form-control " formControlName="imagen" name="imagen">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaFinalizacion">Fecha Finalización</label>
+                        <input type="text" class="form-control" formControlName="fechaFinalizacion" name="fechaFinalizacion">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
