@@ -2,16 +2,21 @@
     border: 2px solid hsl(227, 100%, 50%);
     border-radius: 25px;
     margin: 20px;
+    
 }
+
 
 .info-persona {
     flex-grow: 1;
     color: hsla(240, 95%, 48%, 0.91);
+   
 }
 
 .tarjeta-titulo {
     color: hsl(227, 100%, 50%, 0.829);
     padding-left: 15px;
+    background-color: rgb(23, 23, 239);
+   
 }
 
 .btn-mas {
@@ -44,4 +49,5 @@
     flex-grow: 1;
     color: hsla(240, 95%, 48%, 0.91);
     margin: 20px;
+   
 }
